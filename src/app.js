@@ -8,7 +8,10 @@ app.use(cookieParser())
 app.use(express.json());
 app.use(
     cors({
-     origin: true,
+     origin:[
+      "http://localhost:5173",
+      "fitness-app-frontend-7cdf.vercel.app"
+     ] ,
       credentials: true,
     })
   );
