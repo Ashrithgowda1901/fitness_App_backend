@@ -6,12 +6,6 @@ const app=express();
 
 app.use(cookieParser())
 app.use(express.json());
-const cors = require("cors");
-
-const allowedOrigins = [
-  "http://localhost:5173",
-  "https://fitness-app-frontend-7cdf.vercel.app",
-];
 
 app.use(
   cors({
