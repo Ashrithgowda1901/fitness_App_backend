@@ -6,15 +6,22 @@ const app=express();
 
 app.use(cookieParser())
 app.use(express.json());
+const cors = require("cors");
+
+const allowedOrigins = [
+  "http://localhost:5173",
+  "https://fitness-app-frontend-7cdf.vercel.app",
+];
+
 app.use(
-    cors({
-     origin:[
+  cors({
+    origin: [
       "http://localhost:5173",
-      "fitness-app-frontend-7cdf.vercel.app"
-     ] ,
-      credentials: true,
-    })
-  );
+      "https://fitness-app-frontend-7cdf.vercel.app"
+    ],
+    credentials: true,
+  })
+);
 
 const authRoutes=require("./routes/auth.routes");
 const foodRoutes=require("./routes/food.routes");
